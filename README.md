@@ -1,41 +1,36 @@
 # Student Registration System
 
-A responsive student registration system built with HTML, CSS, and JavaScript. It lets users add, edit, delete, and persist student records in the browser using localStorage.
+A polished student registration system built with HTML, CSS, and JavaScript. The app validates student details, renders records dynamically, persists data with localStorage, and adapts across desktop, tablet, and mobile screens.
 
-## Files
+## Project Files
 
-- `index.html` - page markup and form/table structure
-- `styles.css` - responsive layout and styling
-- `script.js` - validation, rendering, localStorage, edit, and delete logic
-- `README.md` - project usage notes
+- `index.html` - semantic page structure, registration form, and student table
+- `styles.css` - two-column layout, responsive rules, card styling, and color theme
+- `script.js` - validation, localStorage persistence, dynamic rendering, edit, and delete logic
+- `README.md` - setup and usage instructions
 
-## Form Fields
+## Features
 
-- Student name
-- Student ID
-- Branch
-- Email
-- Contact number
+- Add student records with name, ID, branch, email, and contact number.
+- Validate all inputs before saving.
+- Edit existing records through the same form.
+- Delete records after a confirmation prompt.
+- Show the total number of registered students.
+- Store records in localStorage so they remain after page reloads.
+- Scroll long student lists inside the registered students card.
 
 ## Validation Rules
 
-- Student name must contain only letters and spaces.
-- Student ID must be numeric.
+- Student name accepts letters and spaces only.
+- Student ID accepts numbers only.
 - Branch cannot be blank.
 - Email must be in a valid format.
-- Contact number must be numeric with at least 10 digits.
-- Empty rows are rejected before they can be added.
+- Contact number accepts numbers only and must contain at least 10 digits.
 
-## Usage
+## How to Run
 
-1. Open `index.html` in a browser.
-2. Fill in all required fields.
-3. Click `Add Student` to save a new record.
-4. Click `Edit` to prefill the form, then click `Save Changes` to update the record.
-5. Click `Delete` to remove a record after confirming the prompt.
+Open `index.html` in any modern browser such as Chrome, Edge, Firefox, or Safari. No build step or server is required.
 
-Saved records remain available after page reloads because they are stored in localStorage.
+## Repository Contents
 
-## ZIP Package
-
-The project package is `student-registration-system.zip`. It contains only the four required files at the root level, with no nested directories.
+The app is included directly in the repository as source files. Open `index.html` to run it.
