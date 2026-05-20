@@ -12,6 +12,7 @@ const clearButton = document.getElementById("clearButton");
 const tableBody = document.getElementById("studentTableBody");
 const emptyState = document.getElementById("emptyState");
 const recordCount = document.getElementById("recordCount");
+const recordCountLabel = document.getElementById("recordCountLabel");
 
 let students = loadStudents();
 let editingIndex = null;
@@ -42,6 +43,7 @@ function getFormData() {
   };
 }
 
+// Collects all validation errors before alerting so users can fix everything at once.
 function validateStudent(student) {
   const errors = [];
   const namePattern = /^[A-Za-z ]+$/;
@@ -101,6 +103,11 @@ function createActionButton(label, className, index) {
   return button;
 }
 
+function updateRecordCounter() {
+  recordCount.textContent = students.length;
+  recordCountLabel.textContent = students.length === 1 ? "student" : "students";
+}
+
 // Rebuilds table rows from the current data so the UI always matches localStorage.
 function renderStudents() {
   tableBody.innerHTML = "";
@@ -129,7 +136,7 @@ function renderStudents() {
     tableBody.appendChild(row);
   });
 
-  recordCount.textContent = `${students.length} ${students.length === 1 ? "record" : "records"}`;
+  updateRecordCounter();
   emptyState.hidden = students.length > 0;
 }
 
