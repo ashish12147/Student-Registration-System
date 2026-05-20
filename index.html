@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive student registration system with validation, editing, deleting, and localStorage persistence.">
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Student Records</p>
+        <h1>Student Registration System</h1>
+      </div>
+      <p class="header-copy">Add, edit, delete, and persist student details in your browser.</p>
+    </header>
+
+    <section class="layout" aria-label="Student registration workspace">
+      <section class="panel form-panel" aria-labelledby="formTitle">
+        <div class="section-heading">
+          <h2 id="formTitle">Register Student</h2>
+          <p>All fields are required before a record can be saved.</p>
+        </div>
+
+        <form id="studentForm" novalidate>
+          <div class="field-group">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" placeholder="Example: Asha Mehta" autocomplete="name">
+          </div>
+
+          <div class="field-group">
+            <label for="studentId">Student ID</label>
+            <input type="text" id="studentId" placeholder="Example: 1025" inputmode="numeric">
+          </div>
+
+          <div class="field-group">
+            <label for="branch">Branch</label>
+            <input type="text" id="branch" placeholder="Example: Computer Science">
+          </div>
+
+          <div class="field-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="student@example.com" autocomplete="email">
+          </div>
+
+          <div class="field-group">
+            <label for="contact">Contact Number</label>
+            <input type="text" id="contact" placeholder="At least 10 digits" inputmode="numeric">
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="submitButton">Add Student</button>
+            <button type="button" id="clearButton" class="secondary-button">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel table-panel" aria-labelledby="tableTitle">
+        <div class="section-heading table-heading">
+          <div>
+            <h2 id="tableTitle">Registered Students</h2>
+            <p>Records remain available after refreshing the page.</p>
+          </div>
+          <span id="recordCount">0 records</span>
+        </div>
+
+        <div class="table-scroll" aria-live="polite">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Student Name</th>
+                <th scope="col">Student ID</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody>
+          </table>
+        </div>
+
+        <p id="emptyState" class="empty-state">No student records yet.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
